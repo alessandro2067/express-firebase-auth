@@ -40,7 +40,7 @@ app.use(firebaseAuth);
 | `ignoredUrls`           | (*Optional*) An array of URLs where you need to skip the authentication.                                                  |
 | `checkEmailVerified`    | (*Optional*) (Default: **false**) If set to **true**, only users with a verified email will be allowed access.            |
 | `checkEmailVerifiedIgnoredUrls`    | (*Optional*) An array of URLs where you need to skip the email verified check.                                 |
-| `checkRevoked`          | (*Optional*)  (Default: **false**) If set to **true**, access will not be allowed if the token has been revoked           |
+| `checkRevoked`          | (*Optional*) (Default: **false**) If set to **true**, access will not be allowed if the token has been revoked            |
 
 #### Note1
 You **must** provide either the `serviceAccount` credentials or an already initialized `firebase` app.
