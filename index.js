@@ -3,7 +3,8 @@ const createFirebaseAuth = ({
   serviceAccount,
   firebase,
   checkEmailVerified = false,
-  checkEmailVerifiedIgnoredUrls
+  checkEmailVerifiedIgnoredUrls,
+  checkRevoked = false
 }) => {
   if (!serviceAccount && !firebase) {
     /* eslint-disable no-console */
@@ -46,7 +47,7 @@ const createFirebaseAuth = ({
       // Authenticate user
       firebaseAdmin
         .auth()
-        .verifyIdToken(idToken)
+        .verifyIdToken(idToken, checkRevoked)
         .then(user => {
           // If checkEmailVerified is true, deny the request if the user's email is not verified
           // Skip if the url is in checkEmailVerifiedIgnoredUrls
